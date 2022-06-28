@@ -1,0 +1,52 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block content %}
+
+    <form action="{% url 'web:child' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="parent_id" value="{{ data_update.id }}">
+        <label for="nama">OrangTua:</label><br>
+        <select name="orangtua" id="orangtua" required>
+            <option value="">--PILIH--</option>
+            {% for data in parent %}
+            <option {% if data_update.fk_parent.id == data.id %} selected {% else %} {% endif %} value="{{ data.id }}">{{data.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" value="{{ data_update.name }}" required><br>
+        <label for="gender">Jenis Kelamin:</label><br>
+        <select name="gender" id="gender" required>
+            <option value="">--PILIH--</option>
+            <option {% if data_update.gender == "male" %} selected {% else %} {% endif %} value="male">Laki Laki</option>
+            <option {% if data_update.gender == "female" %} selected {% else %} {% endif %} value="female">Perempuan</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Tabel Anak</h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>OrangTua</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for data in datas %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ data.fk_parent }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.gender }}</td>
+            <td><a href="{% url 'web:childUpdate' data.id %}" type="button">Update</a></td>
+            <td><a href="{% url 'web:childdelete' data.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+{% endblock %}
