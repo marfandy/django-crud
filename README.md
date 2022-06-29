@@ -21,7 +21,13 @@ Prerequisites
    ```bash
    pip install -r requirements.txt
 
-4. Start App!
+4. Migrate Models!
+
+   ```bash
+   python3 manage.py migrate
+   ```
+   
+5. Start App!
 
    ```bash
    python3 manage.py runserver

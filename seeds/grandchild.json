@@ -1,0 +1,32 @@
+[
+    {
+        "fk_child" : "Dedi",
+        "name" : "Feri",
+        "gender" : "male"
+    },
+    {
+        "fk_child" : "Dedi",
+        "name" : "Farah",
+        "gender" : "female"
+    },
+    {
+        "fk_child" : "Dodi",
+        "name" : "Gugus",
+        "gender" : "male"
+    },
+    {
+        "fk_child" : "Dodi",
+        "name" : "Gandi",
+        "gender" : "male"
+    },
+    {
+        "fk_child" : "Dede",
+        "name" : "Hani",
+        "gender" : "female"
+    },
+    {
+        "fk_child" : "Dede",
+        "name" : "Hana",
+        "gender" : "female"
+    }
+]

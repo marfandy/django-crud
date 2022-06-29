@@ -1,0 +1,22 @@
+[
+    {
+        "fk_parent" : "Budi",
+        "name" : "Dedi",
+        "gender" : "male"
+    },
+    {
+        "fk_parent" : "Budi",
+        "name" : "Dodi",
+        "gender" : "male"
+    },
+    {
+        "fk_parent" : "Budi",
+        "name" : "Dede",
+        "gender" : "male"
+    },
+    {
+        "fk_parent" : "Budi",
+        "name" : "Dewi",
+        "gender" : "female"
+    }
+]
